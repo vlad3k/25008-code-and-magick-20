@@ -43,18 +43,18 @@ window.renderStatistics = function (ctx, players, times) {
     var player = players[i];
     var time = times[i];
     var barHeight = (BAR_MAX_HEIGHT / 100) * (time / maxTime * 100);
-    var BarPositionX = CLOUD_X + GAP * 2 + (BAR_GAP + BAR_WIDTH) * i;
+    var barPositionX = CLOUD_X + GAP * 2 + (BAR_GAP + BAR_WIDTH) * i;
 
     ctx.fillStyle = player === 'Вы' ?
       'rgba(255, 0, 0, 1)' :
       'hsl(235,' + Math.floor(Math.random() * Math.floor(100)) + '%, 50%)';
 
     ctx.fillText(player,
-        BarPositionX,
+        barPositionX,
         CLOUD_Y + CLOUD_HEIGHT - GAP);
 
     ctx.fillRect(
-        BarPositionX,
+        barPositionX,
         CLOUD_Y + CLOUD_HEIGHT - GAP - TEXT_HEIGHT,
         BAR_WIDTH,
         -barHeight);
@@ -62,7 +62,7 @@ window.renderStatistics = function (ctx, players, times) {
     ctx.fillStyle = '#000';
 
     ctx.fillText(Math.round(time),
-        BarPositionX,
+        barPositionX,
         (CLOUD_Y + CLOUD_HEIGHT - GAP - TEXT_HEIGHT) - barHeight - 10);
   }
 };
