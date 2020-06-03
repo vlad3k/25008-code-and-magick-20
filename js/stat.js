@@ -47,7 +47,7 @@ window.renderStatistics = function (ctx, players, times) {
 
     ctx.fillStyle = player === 'Вы' ?
       'rgba(255, 0, 0, 1)' :
-      'hsl(235,' + Math.floor(Math.random() * Math.floor(100)) + '%, 50%)';
+      'hsl(235,' + Math.floor(Math.random() * 100) + '%, 50%)';
 
     ctx.fillText(player,
         barPositionX,
