@@ -42,7 +42,7 @@ window.renderStatistics = function (ctx, players, times) {
   for (var i = 0; i < players.length; i++) {
     var player = players[i];
     var time = times[i];
-    var barHeight = (BAR_MAX_HEIGHT / 100) * (time / maxTime * 100);
+    var barHeight = BAR_MAX_HEIGHT * time / maxTime
     var barPositionX = CLOUD_X + GAP * 2 + (BAR_GAP + BAR_WIDTH) * i;
 
     ctx.fillStyle = player === 'Вы' ?
