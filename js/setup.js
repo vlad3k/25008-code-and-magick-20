@@ -13,8 +13,6 @@ var similarWizardTemplate = document.querySelector('#similar-wizard-template')
   .content
   .querySelector('.setup-similar-item');
 
-userDialog.classList.remove('hidden');
-
 function getRandomValueFromArray(arr) {
   var randomId = Math.floor(Math.random() * arr.length);
   return arr[randomId];
@@ -47,6 +45,7 @@ function renderWizards() {
     fragment.appendChild(renderWizard(wizards[i]));
   }
   similarListElement.appendChild(fragment);
+  userDialog.classList.remove('hidden');
   userDialog.querySelector('.setup-similar').classList.remove('hidden');
 }
 renderWizards();
