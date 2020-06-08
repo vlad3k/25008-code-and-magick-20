@@ -9,7 +9,6 @@ var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
 
 var userDialog = document.querySelector('.setup');
 var similarListElement = userDialog.querySelector('.setup-similar-list');
-var wizards = generateArrayCharacters(FIRST_NAMES, SECOND_NAMES, COATS_COLOR, EYES_COLOR);
 var similarWizardTemplate = document.querySelector('#similar-wizard-template')
   .content
   .querySelector('.setup-similar-item');
@@ -41,14 +40,13 @@ function renderWizard(wizard) {
   return wizardElement;
 }
 
-function renderWizards(arr) {
+function renderWizards() {
+  var wizards = generateArrayCharacters(FIRST_NAMES, SECOND_NAMES, COATS_COLOR, EYES_COLOR);
   var fragment = document.createDocumentFragment();
-  for (var i = 0; i < arr.length; i++) {
-    fragment.appendChild(renderWizard(arr[i]));
+  for (var i = 0; i < wizards.length; i++) {
+    fragment.appendChild(renderWizard(wizards[i]));
   }
   similarListElement.appendChild(fragment);
+  userDialog.querySelector('.setup-similar').classList.remove('hidden');
 }
-
-renderWizards(wizards);
-
-userDialog.querySelector('.setup-similar').classList.remove('hidden');
+renderWizards();
