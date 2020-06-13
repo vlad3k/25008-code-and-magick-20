@@ -14,6 +14,7 @@ var userDialogClose = userDialog.querySelector('.setup-close');
 var wizardCoat = document.querySelector('.setup-wizard .wizard-coat');
 var wizardEyes = document.querySelector('.setup-wizard .wizard-eyes');
 var wizardFireball = document.querySelector('.setup-fireball-wrap');
+var wizardNameInput = document.querySelector('.setup-user-name');
 var wizardCoatInput = document.querySelector('input[name="coat-color"]');
 var wizardEyesInput = document.querySelector('input[name="eyes-color"]');
 var wizardFireballInput = document.querySelector('input[name="fireball-color"]');
@@ -77,7 +78,7 @@ function paintFireball() {
 }
 
 function onPopupEscPress(evt) {
-  if (evt.key === 'Escape') {
+  if (evt.key === 'Escape' && document.activeElement !== wizardNameInput) {
     evt.preventDefault();
     closePopup();
   }
